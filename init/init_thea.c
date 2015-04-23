@@ -83,6 +83,19 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.radio.dont_use_dsd", "true");
         property_set("persist.radio.plmn_name_cmp", "1");
         property_set("telephony.lteOnGsmDevice", "1");
+    } else if (ISMATCH(radio, "0xD")) {
+        /* XT1079 */
+        property_set("ro.product.device", "thea_ds");
+        property_set("ro.product.name", "thea_retcn_ds");
+        property_set("ro.build.description", "thea_retcn_ds-user 5.0.2 LXB22.46-28 27 release-keys");
+        property_set("ro.build.fingerprint", "motorola/thea_retcn_ds/thea_ds:5.0.2/LXB22.46-28/27:user/release-keys");
+        property_set("ro.build.product", "thea_ds");
+        property_set("ro.mot.build.customerid", "retcn");
+        property_set("ro.telephony.default_network", "20");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("persist.radio.dont_use_dsd", "true");
+        property_set("persist.radio.plmn_name_cmp", "1");
+        property_set("telephony.lteOnGsmDevice", "1");
     }
 
     property_get("ro.product.device", device);
